@@ -58,6 +58,12 @@ sudo make install
 cd ..
 sudo cp udev/99-picotool.rules /etc/udev/rules.d/
 
+# Install VS Code
+sudo apt install -y code
+code --install-extension marus25.cortex-debug
+code --install-extension ms-vscode.cmake-tools
+code --install-extension ms-vscode.cpptools
+
 # Cleanup
 cd $PICO_HOME
 rm -r openocd picotool
