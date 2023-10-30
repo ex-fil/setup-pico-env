@@ -59,6 +59,8 @@ cd ..
 sudo cp udev/99-picotool.rules /etc/udev/rules.d/
 
 # Install VS Code
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor --yes --output /etc/apt/keyrings/packages.microsoft.gpg
+echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list
 sudo apt install -y code
 code --install-extension marus25.cortex-debug
 code --install-extension ms-vscode.cmake-tools
