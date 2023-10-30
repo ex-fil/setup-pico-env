@@ -15,6 +15,10 @@ sudo apt -y install git python3 python-is-python3 cmake gcc-arm-none-eabi libnew
 git clone https://github.com/raspberrypi/pico-sdk.git
 cd pico-sdk
 git submodule update --init
+mkdir build
+cd build
+cmake .. -DCMAKE_BUILD_TYPE=Debug -DPICO_SDK_TESTS_ENABLED=0
+make -j$(proc)
 echo 'Adding export PICO_SDK_PATH="$HOME/pico/pico-sdk" to your .bashrc file'
 grep -q 'PICO_SDK_PATH' $HOME/.bashrc || printf '\nexport PICO_SDK_PATH="$HOME/pico/pico-sdk"\n' >> $HOME/.bashrc
 export PICO_SDK_PATH="$HOME/pico/pico-sdk"
