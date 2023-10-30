@@ -27,6 +27,7 @@ cd pico-examples
 mkdir build
 cd build
 cmake .. -DCMAKE_BUILD_TYPE=Debug
+make -j$(proc)
 
 # Setup Debug Probe
 echo "Setup Debug Probe (openocd)"
